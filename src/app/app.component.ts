@@ -19,20 +19,20 @@ export class AppComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.userService.getUser('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd').subscribe(user => {
-      console.log(user);
-    });
-    this.questionService.getQuestions('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd', 5, 1).subscribe(questions => {
-      console.log(questions);
-    });
+    // this.userService.getUser('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd').subscribe(user => {
+    //   console.log(user);
+    // });
+    // this.questionService.getQuestions('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd', 5, 1).subscribe(questions => {
+    //   console.log(questions);
+    // });
 
-    this.answerService.submitAnswer({
-      "uuid": "bc37e56f-1f7f-5ffc-96cd-edf733f49dcd",
-      "question_id": 1,
-      "answer": 0
-    }).subscribe(answerResponse => {
-      console.log(answerResponse);
-    });
+    // this.answerService.submitAnswer({
+    //   "uuid": "bc37e56f-1f7f-5ffc-96cd-edf733f49dcd",
+    //   "question_id": 1,
+    //   "answer": 0
+    // }).subscribe(answerResponse => {
+    //   console.log(answerResponse);
+    // });
 
   }
   title = 'hackit-smartsg';
