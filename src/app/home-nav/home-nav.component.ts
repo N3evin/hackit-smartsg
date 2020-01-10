@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../shared/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-nav',
@@ -15,6 +15,7 @@ export class HomeNavComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private router: Router,
     private route: ActivatedRoute
   ) { }
 
@@ -26,6 +27,14 @@ export class HomeNavComponent implements OnInit {
       this.updatedPoints = user['points'];
     });
 
+  }
+
+  shopPage() {
+    this.router.navigateByUrl('/shop/' + this.id);
+  }
+
+  homepage() {
+    this.router.navigateByUrl('/home/' + this.id);
   }
 
 }

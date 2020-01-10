@@ -1,7 +1,9 @@
 <mat-toolbar>
-  <i class="material-icons" style="font-size: 35px; padding-right: 10px">
-    face
-  </i>
+  <button (click)="homepage()" style="background: none; border: none;">
+	  <i class="material-icons" style="font-size: 35px; padding-top: 6px">
+	    face
+	  </i>
+  </button>
   <span>{{user?.firstname}}</span>
-  <button mat-stroked-button style="position:absolute; right:10px;">{{updatedPoints}} Points</button>
+  <button mat-stroked-button style="position:absolute; right:10px;" (click)="shopPage()">{{updatedPoints}} Points</button>
 </mat-toolbar>

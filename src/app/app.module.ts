@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuestionCardComponent } from './question-card/question-card.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
-import { AdminComponent } from './admin/admin.component'
+import { AdminComponent } from './admin/admin.component';
+import { ShopComponent } from './shop/shop.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminComponent } from './admin/admin.component'
     QuestionCardComponent,
     LoginComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
