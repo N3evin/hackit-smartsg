@@ -10,7 +10,8 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
 import { MaterialModule } from "./material/material.module";
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component'
 import { HttpClientModule } from '@angular/common/http';
-import { QuestionCardComponent } from './question-card/question-card.component'
+import { QuestionCardComponent } from './question-card/question-card.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { QuestionCardComponent } from './question-card/question-card.component'
     HomeComponent,
     HomeNavComponent,
     HomeCarouselComponent,
-    QuestionCardComponent
+    QuestionCardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

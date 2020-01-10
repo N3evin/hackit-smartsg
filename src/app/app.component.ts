@@ -17,6 +17,7 @@ export class AppComponent {
   ) { }
 
   ngOnInit(): void {
+
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     // this.userService.getUser('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd').subscribe(user => {

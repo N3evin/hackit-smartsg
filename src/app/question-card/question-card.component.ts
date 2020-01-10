@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AnswerService } from '../shared/answer.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-question-card',
@@ -10,6 +11,7 @@ export class QuestionCardComponent implements OnInit {
 
   clickedAnswer: string;
   disableAnswer: boolean = false;
+  id: any;
   @Input() questionData: any;
   @Output() public onPointsUpdate: EventEmitter<any> = new EventEmitter<any>();
 
@@ -18,10 +20,13 @@ export class QuestionCardComponent implements OnInit {
   insults = ["What are you doing?", "Go read up!", "Try next answer la!"];
 
   constructor(
-    private answerService: AnswerService
+    private answerService: AnswerService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('uuid');
+
   }
 
   convertToJson(answers) {
@@ -30,7 +35,7 @@ export class QuestionCardComponent implements OnInit {
 
   submitAnswer(event) {
     this.answerService.submitAnswer({
-      "uuid": "bc37e56f-1f7f-5ffc-96cd-edf733f49dcd",
+      "uuid": this.id,
       "question_id": this.questionData.id,
       "answer": event
     }).subscribe(answerResponse => {

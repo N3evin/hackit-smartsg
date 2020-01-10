@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../shared/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-nav',
@@ -9,13 +10,17 @@ import { UserService } from '../shared/user.service';
 export class HomeNavComponent implements OnInit {
 
   user: any;
+  id: any;
   @Input() updatedPoints: any
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.userService.getUser('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd').subscribe(user => {
+    this.id = this.route.snapshot.paramMap.get('uuid');
+
+    this.userService.getUser(this.id).subscribe(user => {
       this.user = user;
       this.updatedPoints = user['points'];
       console.log(user);
