@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -10,6 +10,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     CommonModule
   ],
-  exports: [ MatToolbarModule ]
+  exports: [
+  	MatToolbarModule,
+  	NgbModule
+  ]
 })
 export class MaterialModule { }

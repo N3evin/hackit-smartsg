@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { HomeNavComponent } from './home-nav/home-nav.component';
 
-import { MaterialModule } from "./material/material.module"
+import { MaterialModule } from "./material/material.module";
+import { HomeCarouselComponent } from './home-carousel/home-carousel.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HomeNavComponent
+    HomeNavComponent,
+    HomeCarouselComponent
   ],
   imports: [
     BrowserModule,
