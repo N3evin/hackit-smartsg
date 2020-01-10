@@ -7,6 +7,8 @@ import { MatRadioModule } from '@angular/material/radio';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [],
@@ -17,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   	FormsModule,
   	MatToolbarModule,
   	MatRadioModule,
-  	NgbModule
+  	NgbModule,
+    FontAwesomeModule
   ]
 })
 export class MaterialModule { }
