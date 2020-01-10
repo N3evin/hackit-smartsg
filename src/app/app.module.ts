@@ -12,7 +12,8 @@ import { HomeCarouselComponent } from './home-carousel/home-carousel.component'
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionCardComponent } from './question-card/question-card.component';
 import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component'
     HomeCarouselComponent,
     QuestionCardComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
