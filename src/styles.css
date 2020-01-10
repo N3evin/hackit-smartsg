@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.carousel-control-prev-icon{
+   background-image: url('https://apufpel.com.br/assets/img/seta_prim.png');
+}
+.carousel-control-next-icon{
+  background-image: url('https://apufpel.com.br/assets/img/seta_ult.png');
+}
