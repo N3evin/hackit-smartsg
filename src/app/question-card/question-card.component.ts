@@ -16,6 +16,7 @@ export class QuestionCardComponent implements OnInit {
   @Output() public onPointsUpdate: EventEmitter<any> = new EventEmitter<any>();
 
   congratsText: string;
+  insultText: string;
 
   insults = ["What are you doing?", "Go read up!", "Try next answer la!"];
 
@@ -45,7 +46,7 @@ export class QuestionCardComponent implements OnInit {
         this.onPointsUpdate.emit(answerResponse['updatedPoints']);
 
       } else {
-        this.congratsText = this.insults[Math.floor(Math.random() * this.insults.length)]
+        this.insultText = this.insults[Math.floor(Math.random() * this.insults.length)]
       }
       console.log(answerResponse);
     });

@@ -11,8 +11,9 @@
 			{{answer}}
 		</mat-radio-button>
 	</mat-radio-group>
-	<div>{{congratsText}}</div>
-	<div *ngIf="disableAnswer">
+	<div *ngIf="disableAnswer" style="color: green">{{congratsText}}</div>
+	<div *ngIf="!disableAnswer" style="color: red">{{insultText}}</div>
+	<div *ngIf="disableAnswer" class="description">
 		{{questionData.description}}
 	</div>
 </div>

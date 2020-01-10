@@ -11,7 +11,8 @@ import { MaterialModule } from "./material/material.module";
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component'
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionCardComponent } from './question-card/question-card.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login.component'
     HomeNavComponent,
     HomeCarouselComponent,
     QuestionCardComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
