@@ -14,6 +14,5 @@ export class UserService {
 
   getUser(uuid) {
     return this.http.get(this.requestUrl + '?uuid=' + uuid);
-
   }
 }
