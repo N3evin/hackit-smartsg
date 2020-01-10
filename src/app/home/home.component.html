@@ -1,2 +1,2 @@
-<app-home-nav></app-home-nav>
-<app-home-carousel></app-home-carousel>
+<app-home-nav [updatedPoints]="updatedPoints"></app-home-nav>
+<app-home-carousel (onPointsUpdate)="handlePointsUpdated($event)"></app-home-carousel>

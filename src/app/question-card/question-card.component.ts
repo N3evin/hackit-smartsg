@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AnswerService } from '../shared/answer.service';
 
 @Component({
@@ -11,6 +11,8 @@ export class QuestionCardComponent implements OnInit {
   clickedAnswer: string;
   disableAnswer: boolean = false;
   @Input() questionData: any;
+  @Output() public onPointsUpdate: EventEmitter<any> = new EventEmitter<any>();
+
   congratsText: string;
 
   insults = ["What are you doing?", "Go read up!", "Try next answer la!"];
@@ -22,19 +24,21 @@ export class QuestionCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  convertToJson(answers){
-  	return JSON.parse(answers)["answers"];
+  convertToJson(answers) {
+    return JSON.parse(answers)["answers"];
   }
 
-  submitAnswer(event){
+  submitAnswer(event) {
     this.answerService.submitAnswer({
       "uuid": "bc37e56f-1f7f-5ffc-96cd-edf733f49dcd",
       "question_id": this.questionData.id,
       "answer": event
     }).subscribe(answerResponse => {
-      if(answerResponse["message"] != "wrong answer"){
+      if (answerResponse["message"] != "wrong answer") {
         this.disableAnswer = true;
-        this.congratsText = "You are right! You are awarded " + answerResponse["pointsAwarded"] +" points!"
+        this.congratsText = "You are right! You are awarded " + answerResponse["pointsAwarded"] + " points!"
+        this.onPointsUpdate.emit(answerResponse['updatedPoints']);
+
       } else {
         this.congratsText = this.insults[Math.floor(Math.random() * this.insults.length)]
       }

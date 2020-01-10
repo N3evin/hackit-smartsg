@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  updatedPoints = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  handlePointsUpdated(event) {
+    console.group(event)
+    this.updatedPoints = event.points;
+  }
 }

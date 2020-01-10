@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { QuestionService } from '../shared/question.service';
 
 @Component({
@@ -12,26 +12,31 @@ export class HomeCarouselComponent implements OnInit {
   qnCurrentPage: number = 1;
   pageLimit: number = 3;
   totalPage: number = 1;
-
+  @Output() public onPointsUpdate: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private questionService: QuestionService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.questionService.getQuestions('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd', this.pageLimit, this.qnCurrentPage).subscribe(questions => {
-      this.questionsData=questions["questions"];
-      this.totalPage=questions["totalPage"];
+      this.questionsData = questions["questions"];
+      this.totalPage = questions["totalPage"];
     });
   }
 
-  isItEndOfPage(event){
-    if(event.current+1 >= (this.pageLimit * this.qnCurrentPage) && this.qnCurrentPage < this.totalPage){
+  handlePointsUpdated(event) {
+    this.onPointsUpdate.emit(event);
+
+  }
+
+  isItEndOfPage(event) {
+    if (event.current + 1 >= (this.pageLimit * this.qnCurrentPage) && this.qnCurrentPage < this.totalPage) {
       console.log("PAGE LIMIT!");
       this.qnCurrentPage++;
       this.questionService.getQuestions('bc37e56f-1f7f-5ffc-96cd-edf733f49dcd', this.pageLimit, this.qnCurrentPage).subscribe(questions => {
         this.questionsData = JSON.parse(JSON.stringify(this.questionsData.concat(questions["questions"])));
-        this.totalPage=questions["totalPage"];
+        this.totalPage = questions["totalPage"];
 
         console.log(this.questionsData);
       });

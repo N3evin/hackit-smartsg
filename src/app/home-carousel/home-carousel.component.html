@@ -1,7 +1,8 @@
 <ngb-carousel [showNavigationIndicators]=false [wrap]=false [interval]=0 (slide)="isItEndOfPage($event)">
   <ng-template ngbSlide *ngFor="let data of questionsData; let i = index" [id]=i>
     <div class="picsum-img-wrapper">
-      <app-question-card [questionData]=data></app-question-card>
+      <app-question-card [questionData]=data (onPointsUpdate)="handlePointsUpdated($event)">
+      </app-question-card>
     </div>
   </ng-template>
 </ngb-carousel>
