@@ -10,13 +10,15 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
 import { MaterialModule } from "./material/material.module";
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component'
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionCardComponent } from './question-card/question-card.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HomeNavComponent,
-    HomeCarouselComponent
+    HomeCarouselComponent,
+    QuestionCardComponent
   ],
   imports: [
     BrowserModule,
