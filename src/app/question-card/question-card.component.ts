@@ -32,9 +32,9 @@ export class QuestionCardComponent implements OnInit {
       "question_id": this.questionData.id,
       "answer": event
     }).subscribe(answerResponse => {
-      if(answerResponse.message != "wrong answer"){
+      if(answerResponse["message"] != "wrong answer"){
         this.disableAnswer = true;
-        this.congratsText = "You are right! You are awarded " + answerResponse.pointsAwarded +" points!"
+        this.congratsText = "You are right! You are awarded " + answerResponse["pointsAwarded"] +" points!"
       } else {
         this.congratsText = this.insults[Math.floor(Math.random() * this.insults.length)]
       }
